@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  padding-left: 0;
+}
+li {
+  list-style: none;
+}
+
+todo-item-delete {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  color: #61dafb;
+  font-weight: 600;
+  
+}
+
+todo-item-delete:hover {
+  display: block;
+}
+
+todo-item-delete::after {
+  content: 'X';
+}
