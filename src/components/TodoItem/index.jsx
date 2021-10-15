@@ -1,19 +1,28 @@
 
 const PREFIX = 'todo-item'
 
-const TodoItem = ({ id, text, completed, onToggle }) => {
+const TodoItem = ({ id, text, completed, onToggle, onDelete }) => {
+
+    const remove = () => {
+        return onDelete(id)
+    };
+
     return (
         <>
-            <li>
+            <li className={PREFIX}>
                 <input
-                    type="checkbox" 
+                    className="checkbox"
+                    type="checkbox"
                     checked={completed}
                     onChange={(e) => onToggle(id)}
                 />
-                <label>
+                <label className={completed ? `${PREFIX}-completed` : undefined}>
                     { text }
                 </label>
-                <button className={`${PREFIX}-delete`}></button>
+                <button
+                    className={`${PREFIX}-delete`}
+                    onClick={remove}
+                />
             </li>
         </>
     )

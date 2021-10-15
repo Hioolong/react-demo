@@ -44,21 +44,118 @@ li {
   list-style: none;
 }
 
-todo-item-delete {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 30px;
-  color: #61dafb;
-  font-weight: 600;
-  
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-todo-item-delete:hover {
+.App {
+  width: 500px;
+  height: auto;
+  margin-top: 80px;
+}
+
+.main {
+  width: inherit;
+  height: inherit;
+}
+
+.input {
+  width: inherit;
+  padding: 20px 16px;
+  line-height: 20px;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.todo-list {
+  margin: 0;
+}
+
+.todo-item {
+  position: relative;
+  width: inherit;
+  height: 50px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.todo-item label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo-item .checkbox {
+  width: 50px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-item-delete {
+  font-size: 20px;
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.todo-item-completed {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.todo-item-delete:hover {
+  cursor: pointer;
+}
+
+.todo-item:hover .todo-item-delete {
   display: block;
 }
 
-todo-item-delete::after {
+.todo-item-delete::after {
   content: 'X';
+}
+
+.Footer {
+  width: inherit;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #777;
+}
+
+.Footer .right {
+  cursor: pointer;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.Footer .middle {
+  display: flex;
+}
+
+.Footer .middle .filter-item {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.Footer .middle .filter-item:not(:first-child) {
+    margin-left: 6px;
+}
+
+.Footer .middle .filter-item-actived {
+  border: 1px solid salmon;
+  border-radius: 6px;
 }
