@@ -51,9 +51,8 @@ function Home() {
     );
 
     //handle filter list
-    const handleFilterChange = (e) => {
-        const val = + e.target.dataset.value
-        setFilter(val)
+    const handleFilterChange = (i) => {
+        setFilter(i)
     };
 
     // handle user delete todo item

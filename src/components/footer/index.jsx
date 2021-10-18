@@ -11,9 +11,8 @@ const Footer = ({ leftItemsNum, filter, onFilterChange, clearCompletedVisible ,o
                     return (
                         <div
                             key={key}
-                            data-value={filterListStatus[key]}
                             className={`${ 'filter-item' } ${ filterListStatus[key] === filter ? 'filter-item-actived' : undefined }`}
-                            onClick={onFilterChange}
+                            onClick={() => { onFilterChange(filterListStatus[key]) }}
                         >
                             { key }
                         </div>
